@@ -1,0 +1,418 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}KOA Campgrounds Financial Dashboard | Christian Calvo Portfolio{% endblock %}
+
+{% block content %}
+<section class="project-hero">
+    <div class="project-hero-content">
+        <p class="eyebrow">Power BI · DAX · Financial Reporting · Data Modeling</p>
+
+        <h1>KOA Campgrounds Financial Consolidation Dashboard</h1>
+
+        <p class="project-lead">
+            A business intelligence case study focused on consolidating financial reporting across multiple
+            campground and RV resort entities. The project transforms separate QuickBooks-style financial exports,
+            account mappings, and budget files into a centralized Power BI reporting model for executive review.
+        </p>
+
+        <div class="project-meta-grid">
+            <div>
+                <span class="meta-label">Role</span>
+                <strong>BI Analyst / Financial Reporting Developer</strong>
+            </div>
+            <div>
+                <span class="meta-label">Tools</span>
+                <strong>Power BI, DAX, Excel, SQL concepts, ETL logic</strong>
+            </div>
+            <div>
+                <span class="meta-label">Data Type</span>
+                <strong>Multi-entity financial reporting model</strong>
+            </div>
+            <div>
+                <span class="meta-label">Focus</span>
+                <strong>Consolidation, Budget vs Actual, YoY/YTD analytics</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="case-study-warning">
+        <strong>Portfolio note:</strong>
+        This project page is designed to demonstrate business intelligence, financial reporting, and dashboard
+        development capability. Any public portfolio version should use sanitized, synthetic, or non-confidential data only.
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <h2>Business Problem</h2>
+        <p>
+            The campground group operated multiple locations, each with its own financial export structure and
+            account-level reporting differences. Accounting staff had to export reports, copy data into Excel,
+            manually map accounts, reconcile totals, and prepare executive summaries.
+        </p>
+
+        <p>
+            Because each entity used a similar but not identical chart of accounts, the monthly consolidation process
+            was time-consuming, inconsistent, and vulnerable to manual error. Leadership needed a repeatable reporting
+            framework that could consolidate actuals, budget data, prior-year results, and entity-level performance
+            into one executive dashboard suite.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Core Questions Answered</h3>
+        <ul>
+            <li>How is the business performing financially across all locations?</li>
+            <li>Are revenue, expenses, and profit improving year-over-year?</li>
+            <li>Is the company on track against budget?</li>
+            <li>Which locations contribute most to revenue and profit?</li>
+            <li>Which accounts are driving budget variance?</li>
+            <li>Where should management focus attention?</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Dashboard Output</h2>
+
+    <div class="dashboard-gallery compact-dashboard-gallery">
+        <figure class="dashboard-figure">
+            <img
+                src="{% static 'img/koa_campgrounds/dashboard_01.png' %}"
+                alt="Executive summary Power BI dashboard for KOA campground financial performance"
+                class="dashboard-image"
+            >
+            <figcaption>
+                Executive Summary dashboard showing revenue, net profit, profit margin, expenses, budget achievement,
+                monthly financial trends, location profit contribution, and actual vs budget profit.
+            </figcaption>
+        </figure>
+
+        <figure class="dashboard-figure">
+            <img
+                src="{% static 'img/koa_campgrounds/dashboard_02.png' %}"
+                alt="Revenue analysis Power BI dashboard for KOA campground financial performance"
+                class="dashboard-image"
+            >
+            <figcaption>
+                Revenue Analysis dashboard showing actual revenue, budget revenue, variance, budget achievement,
+                revenue trend, revenue by campground, and actual vs budget revenue comparison.
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Solution Approach</h2>
+
+    <div class="process-timeline">
+        <article class="process-step">
+            <span>01</span>
+            <h3>Source Data Review</h3>
+            <p>
+                Reviewed financial transaction exports, budget files, and account structures across multiple
+                operating entities.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>02</span>
+            <h3>Account Mapping</h3>
+            <p>
+                Mapped local entity accounts into standardized corporate reporting categories so financial
+                results could be consolidated consistently.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>03</span>
+            <h3>ETL Development</h3>
+            <p>
+                Built repeatable transformation logic to clean transactions, standardize financial fields,
+                integrate budget data, and prepare reporting tables.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>04</span>
+            <h3>Financial Data Model</h3>
+            <p>
+                Designed a centralized financial star schema with transaction facts and supporting dimensions
+                for date, entity, account, financial category, and budget analysis.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>05</span>
+            <h3>DAX KPI Framework</h3>
+            <p>
+                Created reusable measures for revenue, expenses, net profit, profit margin, budget achievement,
+                variance, YoY comparison, and YTD analysis.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>06</span>
+            <h3>Executive Dashboarding</h3>
+            <p>
+                Built executive-facing Power BI pages to support financial review, budget monitoring,
+                location comparison, and management attention areas.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Key Metrics Built</h2>
+
+    <div class="metric-grid">
+        <article class="metric-card">
+            <span class="metric-value">$4.40M</span>
+            <span class="metric-label">Revenue</span>
+            <p>Total revenue for January 1, 2025 through June 30, 2025.</p>
+        </article>
+
+        <article class="metric-card">
+            <span class="metric-value">$2.11M</span>
+            <span class="metric-label">Net Profit</span>
+            <p>Net profit across the consolidated campground portfolio.</p>
+        </article>
+
+        <article class="metric-card">
+            <span class="metric-value">47.91%</span>
+            <span class="metric-label">Profit Margin</span>
+            <p>Portfolio-level profit margin for the reporting period.</p>
+        </article>
+
+        <article class="metric-card">
+            <span class="metric-value">99.44%</span>
+            <span class="metric-label">Budget Achievement</span>
+            <p>Revenue achievement against plan, showing performance was nearly on target.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <h2>Selected Findings</h2>
+
+        <p>
+            The analysis found that the campground portfolio was profitable, growing, and generally aligned
+            with budget expectations. Revenue increased year-over-year, net profit improved, and profit margin
+            remained strong.
+        </p>
+
+        <p>
+            The strongest management attention areas were not broad financial instability, but targeted issues:
+            expense growth, location-level margin variation, site revenue underperformance, and specific
+            budget gaps by campground.
+        </p>
+    </div>
+
+    <div class="insight-card">
+        <h3>Executive Conclusion</h3>
+        <p>
+            The company was financially healthy overall. Management attention should focus on improving
+            Site Revenue performance, reviewing Tucson margin pressure, and investigating Sedona's revenue
+            shortfall against plan.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Financial Performance Summary</h2>
+
+    <div class="table-wrap">
+        <table class="case-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current Period</th>
+                    <th>Prior Year</th>
+                    <th>YoY Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Revenue</td>
+                    <td>$4.40M</td>
+                    <td>$4.09M</td>
+                    <td>+7.49%</td>
+                </tr>
+                <tr>
+                    <td>Expenses</td>
+                    <td>$2.29M</td>
+                    <td>$2.14M</td>
+                    <td>+7.11%</td>
+                </tr>
+                <tr>
+                    <td>Net Profit</td>
+                    <td>$2.11M</td>
+                    <td>$1.95M</td>
+                    <td>+7.91%</td>
+                </tr>
+                <tr>
+                    <td>Profit Margin</td>
+                    <td>47.91%</td>
+                    <td>47.72%</td>
+                    <td>+0.19 pts</td>
+                </tr>
+                <tr>
+                    <td>Budget Revenue</td>
+                    <td>$4.42M</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Budget Achievement</td>
+                    <td>99.44%</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Entity-Level Findings</h2>
+
+    <div class="table-wrap">
+        <table class="case-table">
+            <thead>
+                <tr>
+                    <th>Entity</th>
+                    <th>Revenue</th>
+                    <th>Net Profit</th>
+                    <th>Margin</th>
+                    <th>Budget Ach.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lake Havasu RV Resort</td>
+                    <td>$907,038</td>
+                    <td>$467,412</td>
+                    <td>51.53%</td>
+                    <td>99.55%</td>
+                </tr>
+                <tr>
+                    <td>Tucson Desert KOA</td>
+                    <td>$829,530</td>
+                    <td>$377,354</td>
+                    <td>45.49%</td>
+                    <td>99.38%</td>
+                </tr>
+                <tr>
+                    <td>Flagstaff Mountain Campground</td>
+                    <td>$771,267</td>
+                    <td>$361,267</td>
+                    <td>46.84%</td>
+                    <td>99.40%</td>
+                </tr>
+                <tr>
+                    <td>Sedona RV Resort</td>
+                    <td>$683,233</td>
+                    <td>$322,685</td>
+                    <td>47.23%</td>
+                    <td>98.50%</td>
+                </tr>
+                <tr>
+                    <td>Grand Canyon Campground</td>
+                    <td>$647,502</td>
+                    <td>$314,837</td>
+                    <td>48.62%</td>
+                    <td>100.14%</td>
+                </tr>
+                <tr>
+                    <td>Prescott KOA</td>
+                    <td>$556,982</td>
+                    <td>$262,318</td>
+                    <td>47.10%</td>
+                    <td>99.74%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <h2>Recommended Actions</h2>
+
+        <ul class="recommendation-list">
+            <li>Review Tucson Desert KOA margin drivers, including pricing, payroll, maintenance, and operating costs.</li>
+            <li>Investigate Sedona RV Resort's revenue shortfall against plan.</li>
+            <li>Monitor supplies, insurance, and utilities for recurring expense pressure.</li>
+            <li>Analyze Site Revenue because it is the largest revenue driver and the main source of budget variance.</li>
+            <li>Add occupancy, reservation, and customer activity data in a future phase to connect financial outcomes with operating drivers.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Skills Demonstrated</h3>
+        <ul class="skill-list single-column">
+            <li>Power BI executive dashboard design</li>
+            <li>DAX financial KPI measures</li>
+            <li>Budget vs Actual analysis</li>
+            <li>YoY and YTD reporting logic</li>
+            <li>Financial data modeling</li>
+            <li>Account mapping framework</li>
+            <li>ETL and data validation</li>
+            <li>Executive financial storytelling</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Project Deliverables</h2>
+
+    <div class="deliverable-grid">
+        <article class="card">
+            <h3>Financial ETL Pipeline</h3>
+            <p>Built repeatable transformation logic for preparing transaction and budget data.</p>
+        </article>
+
+        <article class="card">
+            <h3>Standardized Account Mapping</h3>
+            <p>Mapped local entity accounts into a consistent corporate reporting structure.</p>
+        </article>
+
+        <article class="card">
+            <h3>Financial Star Schema</h3>
+            <p>Created fact and dimension tables for consolidated financial analysis.</p>
+        </article>
+
+        <article class="card">
+            <h3>Power BI Semantic Model</h3>
+            <p>Implemented relationships, calculations, and KPI logic inside Power BI.</p>
+        </article>
+
+        <article class="card">
+            <h3>Executive Summary Dashboard</h3>
+            <p>Built leadership dashboard showing financial health and performance trends.</p>
+        </article>
+
+        <article class="card">
+            <h3>Revenue Analysis Dashboard</h3>
+            <p>Created revenue monitoring by period, operating entity, and budget variance.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="next-project">
+        <p class="eyebrow">Related Project</p>
+        <h2>Mining Laboratory Performance Dashboard</h2>
+        <p>
+            This project complements the mining laboratory case study by showing a different analytics domain:
+            financial consolidation and executive reporting instead of operational SLA analysis.
+        </p>
+
+        <a class="button secondary" href="{% url 'projects' %}">Back to Projects</a>
+    </div>
+</section>
+{% endblock %}

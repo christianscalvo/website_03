@@ -1,0 +1,349 @@
+{% extends "pages/base.html" %}
+{% load static %}
+
+{% block title %}Mining Laboratory Dashboard | Christian Calvo Portfolio{% endblock %}
+
+{% block content %}
+<section class="project-hero">
+    <div class="project-hero-content">
+        <p class="eyebrow">Power BI · SQL · Python · Operations Analytics</p>
+
+        <h1>Mining Laboratory Performance Dashboard</h1>
+
+        <p class="project-lead">
+            A business intelligence case study built around a synthetic production-support mining laboratory.
+            The project converts raw sample-processing records into a structured analytical model and Power BI
+            dashboard for tracking workload, turnaround time, SLA compliance, re-runs, pending samples, and
+            operational bottlenecks.
+        </p>
+
+        <div class="project-meta-grid">
+            <div>
+                <span class="meta-label">Role</span>
+                <strong>BI Analyst / Dashboard Developer</strong>
+            </div>
+            <div>
+                <span class="meta-label">Tools</span>
+                <strong>Power BI, DAX, Python, SQL concepts, Excel</strong>
+            </div>
+            <div>
+                <span class="meta-label">Data Type</span>
+                <strong>Synthetic operational dataset</strong>
+            </div>
+            <div>
+                <span class="meta-label">Focus</span>
+                <strong>Operations reporting and KPI visibility</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="case-study-warning">
+        <strong>Confidentiality note:</strong>
+        This project uses synthetic data modeled after realistic industrial workflows. It does not contain
+        confidential employer, client, or proprietary operational information.
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <h2>Business Problem</h2>
+        <p>
+            The laboratory workflow included sample records with received timestamps, completed timestamps,
+            sample types, departments, areas, technicians, instruments, priorities, statuses, and re-run indicators.
+            Without a centralized reporting structure, managers would have limited visibility into whether
+            turnaround time was improving or deteriorating, which workflows were missing SLA, and whether
+            re-runs were creating hidden workload.
+        </p>
+
+        <p>
+            The central challenge was not simply creating visuals. The real objective was to create a reliable
+            analytical model that could turn operational records into management-ready KPIs.
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Core Questions Answered</h3>
+        <ul>
+            <li>How many samples were processed?</li>
+            <li>Is turnaround time improving or deteriorating?</li>
+            <li>Which instruments or departments are driving SLA misses?</li>
+            <li>Are late samples becoming more frequent or more severe?</li>
+            <li>Is re-run activity creating hidden workload?</li>
+            <li>Are performance issues caused by volume, demand mix, or bottlenecks?</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Dashboard Output</h2>
+
+    <div class="dashboard-gallery compact-dashboard-gallery">
+        <figure class="dashboard-figure">
+            <img
+                src="{% static 'img/mining_laboratory/dashboard_01.png' %}"
+                alt="Executive summary Power BI dashboard for mining laboratory performance"
+                class="dashboard-image"
+            >
+            <figcaption>
+                Executive Summary dashboard showing sample volume, average turnaround time, SLA compliance,
+                re-run samples, late samples by instrument, sample type SLA, lab health, and lateness severity.
+            </figcaption>
+        </figure>
+
+        <figure class="dashboard-figure">
+            <img
+                src="{% static 'img/mining_laboratory/dashboard_02.png' %}"
+                alt="SLA compliance trend Power BI dashboard for mining laboratory performance"
+                class="dashboard-image"
+            >
+            <figcaption>
+                SLA Compliance Trend dashboard showing current performance, prior-period comparison,
+                cumulative movement, and trend-based monitoring.
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Solution Approach</h2>
+
+    <div class="process-timeline">
+        <article class="process-step">
+            <span>01</span>
+            <h3>Data Preparation</h3>
+            <p>
+                Cleaned and standardized raw sample records, including timestamps, categorical fields,
+                sample status, instrument assignment, and operational fields.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>02</span>
+            <h3>Data Modeling</h3>
+            <p>
+                Built a star-schema analytical model with a sample fact table and supporting dimensions
+                for date, instrument, area, department, technician, and sample type rules.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>03</span>
+            <h3>KPI Development</h3>
+            <p>
+                Created measures for total samples, average turnaround time, SLA compliance, late samples,
+                re-run rate, pending samples, and lateness severity.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>04</span>
+            <h3>Dashboard Design</h3>
+            <p>
+                Built executive and operational dashboard pages with KPI cards, slicers, trend visuals,
+                comparison views, bottleneck indicators, and operational breakdowns.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>05</span>
+            <h3>Validation</h3>
+            <p>
+                Checked date coverage, orphan keys, null values, business rule consistency, and KPI calculation logic.
+            </p>
+        </article>
+
+        <article class="process-step">
+            <span>06</span>
+            <h3>Executive Analysis</h3>
+            <p>
+                Interpreted the dashboard results into operational conclusions and management recommendations.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Key Metrics Built</h2>
+
+    <div class="metric-grid">
+        <article class="metric-card">
+            <span class="metric-value">916</span>
+            <span class="metric-label">May Samples</span>
+            <p>May workload was broadly consistent with the January-April normalized baseline.</p>
+        </article>
+
+        <article class="metric-card">
+            <span class="metric-value">3.19 hrs</span>
+            <span class="metric-label">Average Turnaround</span>
+            <p>Average turnaround increased from 2.93 hours to 3.19 hours.</p>
+        </article>
+
+        <article class="metric-card">
+            <span class="metric-value">86.35%</span>
+            <span class="metric-label">SLA Compliance</span>
+            <p>SLA compliance declined from 87.37% to 86.35%.</p>
+        </article>
+
+        <article class="metric-card">
+            <span class="metric-value">125</span>
+            <span class="metric-label">Late Samples</span>
+            <p>Late samples increased against the normalized January-April baseline.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <h2>Selected Findings</h2>
+
+        <p>
+            The analysis found that May workload was broadly stable, but operational performance weakened.
+            Total sample volume was essentially flat, while average turnaround increased, SLA compliance declined,
+            and late sample count increased.
+        </p>
+
+        <p>
+            The strongest evidence pointed to localized throughput pressure in XRF-supported workflows.
+            XRF-1 and XRF-2 handled approximately 62% of May volume and both showed double-digit increases
+            in average turnaround. The Smelter department also represented the largest share of volume, which
+            amplified the impact of localized slowdown.
+        </p>
+    </div>
+
+    <div class="insight-card">
+        <h3>Executive Conclusion</h3>
+        <p>
+            The performance decline was more consistent with localized throughput pressure than with a broad
+            demand spike. Re-run volume and rush volume were effectively flat, making demand mix a less likely
+            explanation.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Finding Summary</h2>
+
+    <div class="table-wrap">
+        <table class="case-table">
+            <thead>
+                <tr>
+                    <th>Finding</th>
+                    <th>Signal</th>
+                    <th>Interpretation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Stable workload</td>
+                    <td>Total samples increased only slightly</td>
+                    <td>Overall demand did not explain the performance decline.</td>
+                </tr>
+                <tr>
+                    <td>Turnaround deterioration</td>
+                    <td>Average turnaround increased</td>
+                    <td>Processing slowed materially during the review period.</td>
+                </tr>
+                <tr>
+                    <td>SLA decline</td>
+                    <td>SLA compliance decreased</td>
+                    <td>More samples missed expected service thresholds.</td>
+                </tr>
+                <tr>
+                    <td>Flat re-run and rush volume</td>
+                    <td>Re-runs and rush samples were stable</td>
+                    <td>Demand mix and rework were less likely to be the primary cause.</td>
+                </tr>
+                <tr>
+                    <td>XRF workflow pressure</td>
+                    <td>XRF-1 and XRF-2 handled most volume and slowed significantly</td>
+                    <td>Instrument-supported workflow congestion was the strongest bottleneck signal.</td>
+                </tr>
+                <tr>
+                    <td>Smelter concentration</td>
+                    <td>Smelter represented the largest share of volume</td>
+                    <td>Department-level concentration amplified the impact of localized slowdown.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section split">
+    <div>
+        <h2>Recommended Actions</h2>
+
+        <ul class="recommendation-list">
+            <li>Review XRF-1 and XRF-2 maintenance, calibration, queue timing, and staffing records.</li>
+            <li>Audit Smelter sample routing and queue behavior because the department carried the highest volume.</li>
+            <li>Monitor Environmental, Maintenance, and Tailings separately because they showed targeted risk signals.</li>
+            <li>Add late-hour severity buckets to distinguish minor SLA misses from major operational delays.</li>
+            <li>Review technician performance only in context of assignment patterns, instrument coverage, and sample complexity.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Skills Demonstrated</h3>
+        <ul class="skill-list single-column">
+            <li>Power BI dashboard design</li>
+            <li>DAX KPI measures</li>
+            <li>SQL-style data modeling</li>
+            <li>Python ETL and validation</li>
+            <li>Star schema design</li>
+            <li>Operational KPI definition</li>
+            <li>Executive reporting</li>
+            <li>Business problem translation</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Project Deliverables</h2>
+
+    <div class="deliverable-grid">
+        <article class="card">
+            <h3>Cleaned Analytical Dataset</h3>
+            <p>Prepared raw operational data for dashboard reporting and KPI calculation.</p>
+        </article>
+
+        <article class="card">
+            <h3>Star Schema Data Model</h3>
+            <p>Created fact and dimension tables suitable for Power BI analysis.</p>
+        </article>
+
+        <article class="card">
+            <h3>Executive Dashboard</h3>
+            <p>Built an executive Power BI dashboard for operational performance review.</p>
+        </article>
+
+        <article class="card">
+            <h3>KPI Definitions</h3>
+            <p>Documented business logic for turnaround time, SLA compliance, re-runs, and pending samples.</p>
+        </article>
+
+        <article class="card">
+            <h3>Validation Summary</h3>
+            <p>Checked model integrity, calculation logic, date coverage, and business rule consistency.</p>
+        </article>
+
+        <article class="card">
+            <h3>Executive Findings Report</h3>
+            <p>Translated dashboard results into operational findings and management recommendations.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="next-project">
+        <p class="eyebrow">Next Project</p>
+        <h2>KOA Campgrounds Dashboard</h2>
+        <p>
+            The next portfolio case study will focus on the KOA Campgrounds project once the files and screenshots
+            are added.
+        </p>
+
+        <a class="button secondary" href="{% url 'projects' %}">Back to Projects</a>
+    </div>
+</section>
+{% endblock %}

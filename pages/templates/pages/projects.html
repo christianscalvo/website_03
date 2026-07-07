@@ -1,0 +1,69 @@
+{% extends "pages/base.html" %}
+
+{% block title %}Projects | Christian Calvo Data Analytics Portfolio{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">Selected Work</p>
+    <h1>Data Analytics & Business Intelligence Projects</h1>
+    <p>
+        A focused collection of projects showing dashboard development, KPI design, data cleaning,
+        SQL-style modeling, and business reporting.
+    </p>
+</section>
+
+<section class="section">
+    <div class="grid project-grid">
+        <article class="project-card">
+            <p class="project-tag">Power BI · Operations Analytics</p>
+            <h2>Mining Laboratory Operations Dashboard</h2>
+            <p>
+                A business intelligence dashboard designed to track sample volume, turnaround time,
+                SLA compliance, rerun rate, pending workload, and operational trends.
+            </p>
+
+            <ul>
+                <li>Built around a star-schema analytical model</li>
+                <li>Designed for supervisors and operations leaders</li>
+                <li>Uses synthetic data modeled after real lab reporting needs</li>
+            </ul>
+
+            <a class="text-link" href="{% url 'mining_lab_dashboard' %}">View case study</a>
+        </article>
+
+        <article class="project-card">
+            <p class="project-tag">Power BI · Financial Reporting · Budget vs Actual</p>
+            <h2>KOA Campgrounds Financial Consolidation Dashboard</h2>
+            <p>
+                A financial reporting dashboard that consolidates multi-location campground financial data,
+                standardizes account mappings, integrates budget data, and delivers executive Power BI reporting.
+            </p>
+
+            <ul>
+                <li>Consolidates reporting across multiple campground entities</li>
+                <li>Tracks revenue, expenses, net profit, margin, and budget achievement</li>
+                <li>Includes executive summary and revenue analysis dashboard pages</li>
+            </ul>
+
+            <a class="text-link" href="{% url 'koa_campgrounds_dashboard' %}">View case study</a>
+        </article>
+
+        <article class="project-card">
+            <p class="project-tag">Python · Pandas · Data Cleaning</p>
+            <h2>Messy Data to Dashboard-Ready Dataset</h2>
+            <p>
+                A Python-based data cleaning workflow that takes inconsistent raw data and converts it
+                into validated, structured outputs ready for Power BI or Excel reporting.
+            </p>
+
+            <ul>
+                <li>Handles missing values and inconsistent categories</li>
+                <li>Creates clean output tables</li>
+                <li>Documents assumptions and validation checks</li>
+            </ul>
+
+            <a class="text-link" href="#">Case study coming soon</a>
+        </article>
+    </div>
+</section>
+{% endblock %}
