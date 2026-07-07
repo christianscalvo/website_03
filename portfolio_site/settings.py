@@ -19,6 +19,7 @@ ALLOWED_HOSTS = [
     ".railway.app",
     "christianscalvobi.com",
     "www.christianscalvobi.com",
+    "web-production-dd2d0.up.railway.app",
 ]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
