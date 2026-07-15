@@ -44,6 +44,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "portfolio_site.urls"
 
+#something
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
